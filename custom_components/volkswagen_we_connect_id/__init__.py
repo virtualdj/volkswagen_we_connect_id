@@ -66,7 +66,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         _LOGGER,
         name=DOMAIN,
         update_method=async_update_data,
-        update_interval=timedelta(seconds=360),
+        update_interval=timedelta(seconds=600),
     )
 
     hass.data.setdefault(DOMAIN, {})
