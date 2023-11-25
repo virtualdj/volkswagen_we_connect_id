@@ -429,12 +429,23 @@ VEHICLE_SENSORS: tuple[VolkswagenIdEntityDescription, ...] = (
         value=lambda vehicle: vehicle.trips["shortTerm"].averageElectricConsumption.value,
     ),
     VolkswagenIdEntityDescription(
+        key="lastTripDuration",
+        name="Last Trip Duration",
+        native_unit_of_measurement=TIME_MINUTES,
+        value=lambda vehicle: vehicle.trips["shortTerm"].travelTime.value,
+    ),
+    VolkswagenIdEntityDescription(
+        key="lastTripLength",
+        name="Last Trip Length",
+        native_unit_of_measurement=LENGTH_KILOMETERS,
+        value=lambda vehicle: vehicle.trips["shortTerm"].mileage_km.value,
+    ),
+    VolkswagenIdEntityDescription(
         key="lastTripAverageFuelConsumption",
         name="Last Trip Average Fuel consumption",
         native_unit_of_measurement="l/100km",
         value=lambda vehicle: vehicle.trips["shortTerm"].averageFuelConsumption.value,
     ),
-
 )
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
