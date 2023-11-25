@@ -1,0 +1,6 @@
+{
+    "name": "Volkswagen We Connect ID",
+    "homeassistant": "2023.3.1",
+    "hacs": "1.33.0",
+    "render_readme": true
+}
