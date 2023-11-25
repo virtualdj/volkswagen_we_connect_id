@@ -64,6 +64,7 @@ class TargetSoCNumber(VolkswagenIDBaseEntity, NumberEntity):
     @property
     def native_value(self) -> float | None:
         """Return the value reported by the number."""
+        return None
         return int(
             get_object_value(
                 self.data.domains["charging"]["chargingSettings"].targetSOC_pct.value
@@ -108,6 +109,7 @@ class TargetClimateNumber(VolkswagenIDBaseEntity, NumberEntity):
     @property
     def native_value(self) -> float | None:
         """Return the value reported by the number."""
+        return None
         targetTemp = self.data.domains["climatisation"][
             "climatisationSettings"
         ].targetTemperature_C.value
