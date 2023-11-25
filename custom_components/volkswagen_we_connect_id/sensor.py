@@ -423,10 +423,9 @@ SENSORS: tuple[VolkswagenIdEntityDescription, ...] = (
 
 VEHICLE_SENSORS: tuple[VolkswagenIdEntityDescription, ...] = (
     VolkswagenIdEntityDescription(
-        key="lastTripAverageElectricConsumption",
-        name="Last Trip Average Electric consumption",
-        native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
-        device_class=SensorDeviceClass.ENERGY,
+        key="lastTripAverageElectricEngineConsumption",
+        name="Last Trip Average Electric Engine Consumption",
+        native_unit_of_measurement="kWh/100km",
         value=lambda vehicle: vehicle.trips["shortTerm"].averageElectricConsumption.value,
     ),
     VolkswagenIdEntityDescription(
